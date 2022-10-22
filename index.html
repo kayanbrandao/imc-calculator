@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculadora de IMC</title>
+
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<h1 class="title">Calculadora de IMC</h1>
+		<div class="container">
+			<div class="container-description">
+				<p class="description">
+					O IMC é reconhecido como padrão internacional para avaliar o
+					grau de sobrepeso e obesidade. É calculado dividindo o peso
+					(em kg) pela altura ao quadrado (em metros).
+				</p>
+				<h2 class="title-formula">Fórmula</h2>
+				<span class="formula">IMC = Peso ÷ (Altura × Altura)</span>
+			</div>
+
+			<div class="container-label">
+				<label class="label">
+					Peso (kg)
+					<input type="text" class="input" id="input-weight" />
+				</label>
+				<label class="label">
+					Altura (metro e cm)
+					<input type="text" class="input" id="input-height" />
+				</label>
+			</div>
+
+			<button class="btn-calculate">Calcular</button>
+			<span class="result"></span>
+		</div>
+
+		<script src="https://unpkg.com/imask"></script>
+		<script src="./js/script.js"></script>
+	</body>
+</html>

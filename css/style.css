@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.title {
+	text-align: center;
+	margin: 20px 0 30px 0;
+}
+
+.container {
+	max-width: 1024px;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-description {
+	max-width: 700px;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.description,
+.title-formula {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.formula {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 400;
+}
+
+.container-label {
+	max-width: 400px;
+	width: 100%;
+}
+
+.label {
+	display: flex;
+	flex-direction: column;
+}
+
+.input {
+	margin: 10px 0 20px 0;
+	height: 35px;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	font-size: 1rem;
+	text-align: right;
+	padding: 0 10px;
+}
+
+.input:focus {
+	border: 1px solid rgb(170, 155, 155);
+}
+
+.btn-calculate {
+	height: 25px;
+	width: 150px;
+	text-transform: uppercase;
+	border-radius: 5px;
+	cursor: pointer;
+	border: none;
+}
