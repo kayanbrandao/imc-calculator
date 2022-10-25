@@ -21,12 +21,45 @@ const checkFields = (weight, height) => {
 	}
 };
 
-const calculateImc = (weight, height) => {
+const convertImc = (weight, height) => {
 	let weightNumber = Number(weight.replace(",", "."));
 	let heightNumber = Number(height.replace(",", "."));
 	let imc = weightNumber / (heightNumber * heightNumber);
-	imc = imc.toFixed(1).replace(".", ",");
+	imc = calculateImc(imc);
+	// imc = imc.toFixed(1).replace(".", ",");
 	return imc;
+};
+
+const calculateImc = (imc) => {
+	if (imc < 18.5)
+		return `Seu IMC é ${imc
+			.toFixed(1)
+			.replace(".", ",")}. Você está abaixo do peso!`;
+
+	if (imc >= 18.5 && imc <= 24.9)
+		return `Seu IMC é ${imc
+			.toFixed(1)
+			.replace(".", ",")}. Você está no peso normal!`;
+
+	if (imc >= 25 && imc <= 29.9)
+		return `Seu IMC é ${imc
+			.toFixed(1)
+			.replace(".", ",")}. Você está com excesso de peso!`;
+
+	if (imc >= 30 && imc <= 34.9)
+		return `Seu IMC é ${imc
+			.toFixed(1)
+			.replace(".", ",")}. Você está com obesidade classe I !`;
+
+	if (imc >= 35 && imc <= 39.9)
+		return `Seu IMC é ${imc
+			.toFixed(1)
+			.replace(".", ",")}. Você está com obesidade classe II !`;
+
+	if (imc >= 40)
+		return `Seu IMC é ${imc
+			.toFixed(1)
+			.replace(".", ",")}. Você está com obesidade classe III !`;
 };
 
 btnCalculate.addEventListener("click", () => {
@@ -34,7 +67,7 @@ btnCalculate.addEventListener("click", () => {
 	let height = inputHeight.value;
 
 	if (!checkFields(weight, height)) {
-		let imc = calculateImc(weight, height);
+		let imc = convertImc(weight, height);
 		result.innerHTML = imc;
 	}
 });
